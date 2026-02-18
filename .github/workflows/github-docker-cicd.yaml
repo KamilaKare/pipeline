@@ -27,16 +27,16 @@ jobs:
        runs-on: ubuntu-latest     # The job runs on the ubuntu-latest operating system
        
        steps:
-        - uses: actions/checkout@v1 
+        - uses: actions/checkout@v4
           with:
             fetch-depth: 0
 #The first step uses the actions/checkout@v1 action to clone the repository.
 #The fetch-depth: 0 parameter ensures that the complete commit history is fetched.
 
         - name: Set up Python 3.10
-          uses: actions/setup-python@v1
+          uses: actions/setup-python@v4
           with:
-            python-version: 3.10
+            python-version: '3.10'
 #The second step sets up Python 3.10 by using the actions/setup-python@v1 action.
 #The python-version: 3.10 parameter specifies the desired Python version.
 
@@ -69,7 +69,7 @@ jobs:
  
       steps:
 
-      - uses: actions/checkout@v2 
+      - uses: actions/checkout@v4 
       - name: docker login
         run: | # log into docker hub account
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
